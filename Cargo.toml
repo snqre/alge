@@ -1,0 +1,13 @@
+[package]
+name = "alge"
+version = "0.0.1"
+edition = "2021"
+authors = ["Marco Bizzaro "]
+description = ""
+license = "MIT"
+repository = ""
+readme = ""
+keywords = [""]
+categories = ["math"]
+
+[dependencies]
