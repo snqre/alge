@@ -206,7 +206,7 @@ mod test {
     }
 
     #[test]
-    fn f_sub_percentage() {
+    fn f_sub_percentage() -> () {
         1250u128
             .f_sub_percentage(2500u128, 2u32)
             .map(|value| assert!(value == 950u128, "{value}"))
@@ -215,7 +215,7 @@ mod test {
     }
 
     #[test]
-    fn f_cast() {
+    fn f_cast() -> () {
         250u128
             .f_cast(2u32, 18u32)
             .unwrap()
@@ -226,7 +226,7 @@ mod test {
     }
 
     #[test]
-    fn f_mul() {
+    fn f_mul() -> () {
         4550u128
             .f_mul(50u128, 2u32)
             .map(|value| assert!(value == 2275u128, "{value}"))
