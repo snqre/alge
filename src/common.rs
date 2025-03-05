@@ -5,6 +5,6 @@ pub type MathResult<T1> = Result<T1, MathError>;
 pub enum MathError {
     Overflow,
     Underflow,
-    DivByZero,
+    DivisionByZero,
     IncompatiblePrecision
 }

@@ -1,7 +1,8 @@
 use crate::common::*;
 use crate::precision::*;
 
-pub trait FixedPointValue : Into<u128> {
+pub trait FixedPointValue:
+    Into<u128> {
     fn f_slice(self, percentage: u128, decimals: u32) -> MathResult<u128>;
     fn f_percentage_gain(self, new_value: u128, decimals: u32) -> MathResult<u128>;
     fn f_percentage_loss(self, new_value: u128, decimals: u32) -> MathResult<u128>;
@@ -88,7 +89,7 @@ impl FixedPointValue for u128 {
             .checked_mul(new_rep)
             .ok_or(MathError::Overflow)?
             .checked_div(old_rep)
-            .ok_or(MathError::DivByZero);
+            .ok_or(MathError::DivisionByZero);
     }
 
     fn f_mul(self, rhs: u128, decimals: u32) -> MathResult<u128> {
@@ -97,7 +98,7 @@ impl FixedPointValue for u128 {
             .checked_mul(rhs)
             .ok_or(MathError::Overflow)?
             .checked_div(rep)
-            .ok_or(MathError::DivByZero);
+            .ok_or(MathError::DivisionByZero);
     }
     
     fn f_div(self, rhs: u128, decimals: u32) -> MathResult<u128> {
@@ -106,6 +107,6 @@ impl FixedPointValue for u128 {
             .checked_mul(rep)
             .ok_or(MathError::Overflow)?
             .checked_div(rhs)
-            .ok_or(MathError::DivByZero);
+            .ok_or(MathError::DivisionByZero);
     }
 }
